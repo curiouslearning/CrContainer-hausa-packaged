@@ -1,0 +1,90 @@
+version: 2.1
+
+executors:
+  android-executor:
+    docker:
+      - image: cimg/android:2023.10
+
+jobs:
+  deploy:
+    executor: android-executor
+    working_directory: ~/project
+    steps:
+      - checkout
+
+      - run:
+          name: Install Bundler & Fastlane plugins
+          command: |
+            sudo gem install bundler
+            cd app
+            bundle install --path vendor/bundle
+
+      - run:
+          name: Make gradlew executable
+          command: chmod +x ./gradlew
+
+      - run:
+          name: Decode Keystore
+          command: |
+            echo $KEYSTORE_BASE64 | base64 --decode > app/keystore/my-release-key.jks
+
+      - run:
+          name: Decode Service Account JSON
+          command: |
+            echo $JSON_KEY_DATA | base64 --decode > app/fastlane/service-account.json
+
+      - run:
+          name: Inject AES Key for Slack Decryption
+          command: |
+            if git log -1 --pretty=%B | grep -qi "release" && { [ "$CIRCLE_BRANCH" = "develop" ] || [ "$CIRCLE_BRANCH" = "main" ]; }; then
+              mkdir -p app/src/main/assets
+              echo "SLACK_AES_KEY=$SLACK_AES_KEY" > app/src/main/assets/config.properties
+              echo "🔐 AES key injected (encrypted webhook remains inside APK)"
+            else
+              echo "⚠️ Skipping Slack webhook URL injection (without release commit)."
+            fi
+
+      # 🟣 Install Sentry CLI
+      - run:
+          name: Install Sentry CLI
+          command: |
+            curl -sL https://sentry.io/get-cli/ | bash
+            sentry-cli --version
+
+      # 🟣 Create Sentry release (before Fastlane)
+      - run:
+          name: Create Sentry Release
+          command: |
+            export SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
+            export SENTRY_ORG=$SENTRY_ORG
+            export SENTRY_PROJECT=$SENTRY_PROJECT
+
+            VERSION_NAME=$(grep versionName app/build.gradle | awk '{print $2}' | tr -d '"')
+
+      - run:
+          name: Fetch full git history for Sentry
+          command: git fetch --unshallow || git fetch --all --tags
+      # 🟣 Run Fastlane (handles build + upload + release)
+      - run:
+          name: Run Fastlane
+          command: |
+            cd app
+            bundle exec fastlane deploy
+
+      # 🟣 Finalize the Sentry release
+      - run:
+          name: Finalize Sentry Release
+          command: |
+            VERSION_NAME=$(grep versionName app/build.gradle | awk '{print $2}' | tr -d '"')
+            sentry-cli releases finalize "$VERSION_NAME"
+            echo "✅ Sentry release finalized for version: $VERSION_NAME"
+
+workflows:
+  deploy_on_branch:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - develop
+                - main
