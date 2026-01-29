@@ -90,22 +90,19 @@ public class WebApp extends BaseActivity {
         pseudoId = sharedPref.getString("pseudoId", "");
         source = utmPrefs.getString("source", "");
         campaignId = utmPrefs.getString("campaign_id", "");
-        goBack = findViewById(R.id.button2);
-        goBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                logAppExitEvent();
-                audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
-                finish();
-            }
-        });
+//        goBack = findViewById(R.id.button2);
+//        goBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                logAppExitEvent();
+//                audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
+//                finish();
+//            }
+//        });
     }
 
     private void loadWebView() {
-        if (!isInternetConnected(getApplicationContext()) && !isDataCached) {
-            showPrompt("Please Connect to the Network");
-            return;
-        }
+
 
         webView = findViewById(R.id.web_app);
         webView.setOverScrollMode(View.OVER_SCROLL_NEVER);
