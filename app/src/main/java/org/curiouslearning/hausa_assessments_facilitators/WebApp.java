@@ -36,7 +36,6 @@ import org.curiouslearning.hausa_assessments_facilitators.core.subapp.validation
 import org.curiouslearning.hausa_assessments_facilitators.core.subapp.handler.AppEventPayloadHandler;
 import org.curiouslearning.hausa_assessments_facilitators.core.subapp.handler.DefaultAppEventPayloadHandler;
 
-
 public class WebApp extends BaseActivity {
 
     private String title;
@@ -90,19 +89,9 @@ public class WebApp extends BaseActivity {
         pseudoId = sharedPref.getString("pseudoId", "");
         source = utmPrefs.getString("source", "");
         campaignId = utmPrefs.getString("campaign_id", "");
-//        goBack = findViewById(R.id.button2);
-//        goBack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                logAppExitEvent();
-//                audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
-//                finish();
-//            }
-//        });
     }
 
     private void loadWebView() {
-
 
         webView = findViewById(R.id.web_app);
         webView.setOverScrollMode(View.OVER_SCROLL_NEVER);
@@ -165,7 +154,6 @@ public class WebApp extends BaseActivity {
         if (appUrl.contains("docs.google.com/forms")) {
             webView.loadUrl(addCrUserIdToFormUrl(appUrl));
         } else if (appUrl.contains("welcome_parent_video")) {
-            goBack.setVisibility(View.GONE);
             webView.loadUrl(addCrUserIdToUrl(appUrl));
         } else {
             webView.loadUrl(addCrUserIdToUrl(appUrl));
@@ -234,10 +222,8 @@ public class WebApp extends BaseActivity {
     public class WebAppInterface {
         private Context mContext;
         private final Gson gson = new Gson();
-        private final AppEventPayloadValidator validator =
-                new AppEventPayloadValidator();
-        private final AppEventPayloadHandler handler =
-                new DefaultAppEventPayloadHandler();
+        private final AppEventPayloadValidator validator = new AppEventPayloadValidator();
+        private final AppEventPayloadHandler handler = new DefaultAppEventPayloadHandler();
 
         WebAppInterface(Context context) {
             mContext = context;
@@ -282,8 +268,7 @@ public class WebApp extends BaseActivity {
                     return;
                 }
 
-                AppEventPayload payload =
-                        gson.fromJson(payloadJson, AppEventPayload.class);
+                AppEventPayload payload = gson.fromJson(payloadJson, AppEventPayload.class);
 
                 ValidationResult result = validator.validate(payload);
 
