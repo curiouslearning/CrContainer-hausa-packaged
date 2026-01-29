@@ -1,5 +1,4 @@
 package org.curiouslearning.hausa_assessments_facilitators.utilities;
-
 import android.content.Context;
 import android.widget.ImageView;
 
@@ -39,9 +38,10 @@ public class ImageLoader {
 
     public static void loadWebAppIcon(Context context, String imageUrl, ImageView imageView) {
         Picasso picasso = getInstance(context);
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>" + imageUrl);
 
         // Load the image and cache it
-        picasso.load(imageUrl)
+        picasso.load("file:///android_asset/images/" + imageUrl)
                 .resize(targetSizePixels, targetSizePixels)
                 .centerCrop()
                 .networkPolicy(NetworkPolicy.OFFLINE)
