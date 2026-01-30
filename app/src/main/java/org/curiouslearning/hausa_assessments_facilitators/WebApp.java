@@ -1,5 +1,6 @@
 package org.curiouslearning.hausa_assessments_facilitators;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -55,7 +56,7 @@ public class WebApp extends BaseActivity {
     private static final String SHARED_PREFS_NAME = "appCached";
     private static final String UTM_PREFS_NAME = "utmPrefs";
     private AudioPlayer audioPlayer;
-    ImageView goBack;
+
     private android.os.Handler monsterStateCheckHandler;
     private Runnable monsterStateCheckRunnable;
     private boolean isFtmApp;
@@ -253,11 +254,16 @@ public class WebApp extends BaseActivity {
 
         @JavascriptInterface
         public void closeWebView() {
-            goBack.setVisibility(View.GONE);
-            logAppExitEvent();
-            audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
-            finish();
+            Log.e("Assessment", "closeWebView called from JS");
+
+            ((Activity) mContext).runOnUiThread(() -> {
+
+                logAppExitEvent();
+                audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
+                ((Activity) mContext).finish();
+            });
         }
+
 
         @JavascriptInterface
         public void logMessage(String payloadJson) {
