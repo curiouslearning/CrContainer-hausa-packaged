@@ -1,19 +1,91 @@
 {
-  "version": "1.96",
+  "version": "1.0",
   "web_apps": [
     {
       "appId": 0,
-      "appIconUrl": "assessment_icon_prod.png",
-      "title": "Assessment Letter Sounds Hausa",
-      "appUrl": "https://hausa_assessments_facilitators.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-lettersounds",
+      "appIconUrl": "ftm_hausa.png",
+      "title": "Feed The Monster Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=hausa",
       "language": "Hausa",
       "languageInEnglishName": "Hausa"
     },
     {
       "appId": 1,
+      "appIconUrl": "ftm_tallandshort_prod.png",
+      "title": "Curious Reader Tall And Short Hausa Level 4",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortHausaLv4",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 2,
+      "appIconUrl": "who_Can_Help_Me.png",
+      "title": "Curious Reader Who Can Help Me Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeHausa",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 3,
+      "appIconUrl": "playground.png",
+      "title": "Curious Reader Playground Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundHausa",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 4,
+      "appIconUrl": "frogs_starry_wish.png",
+      "title": "Curious Reader Frog's Starry Wish Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishHausa",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 5,
+      "appIconUrl": "friends.png",
+      "title": "Curious Reader Friends Hausa Level 4",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsHausaLv4",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 6,
+      "appIconUrl": "dads_boots.png",
+      "title": "Curious Reader Dad's Boots Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsHausa",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 7,
+      "appIconUrl": "chakus_cycle.png",
+      "title": "Curious Reader Chaku's Cycle Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleHausa",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 8,
+      "appIconUrl": "the_lion_runs.png",
+      "title": "Curious Reader The Lion Runs And The Cow Walks Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksHausa",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 9,
+      "appIconUrl": "assessment_icon_prod.png",
+      "title": "Assessment Letter Sounds Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-lettersounds",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 10,
       "appIconUrl": "assessment_icon_sight_word.png",
       "title": "Assessment Sight Words Hausa",
-      "appUrl": "https://hausa_assessments_facilitators.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-sightwords",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-sightwords",
       "language": "Hausa",
       "languageInEnglishName": "Hausa"
     }
