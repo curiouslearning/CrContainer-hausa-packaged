@@ -2,7 +2,12 @@
 <resources>
     <!-- Monster animation sizes - default values (normal screens) -->
     <!-- These will be overridden by screen-size-specific values -->
+
     <dimen name="monster_size">200dp</dimen>
     <dimen name="monster_margin_start">16dp</dimen>
     <dimen name="monster_margin_bottom">0dp</dimen>
+    <!-- RecyclerView default height -->
+    <dimen name="recycler_view_height_large">300dp</dimen>
+    <dimen name="recycler_view_margin_bottom_large">16dp</dimen>
+
 </resources>
