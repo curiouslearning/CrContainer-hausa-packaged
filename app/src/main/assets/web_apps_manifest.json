@@ -44,8 +44,8 @@
     {
       "appId": 5,
       "appIconUrl": "friends.png",
-      "title": "Curious Reader Friends Hausa Level 4",
-      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsHausaLv4",
+      "title": "Curious Reader Friends Hausa",
+      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsHausa",
       "language": "Hausa",
       "languageInEnglishName": "Hausa"
     },

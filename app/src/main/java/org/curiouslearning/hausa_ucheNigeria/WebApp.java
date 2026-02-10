@@ -18,6 +18,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -52,7 +53,7 @@ public class WebApp extends BaseActivity {
     private boolean isDataCached;
     private String source;
     private String campaignId;
-
+    ImageView goBack;
     private static final String SHARED_PREFS_NAME = "appCached";
     private static final String UTM_PREFS_NAME = "utmPrefs";
     private AudioPlayer audioPlayer;
@@ -90,6 +91,15 @@ public class WebApp extends BaseActivity {
         pseudoId = sharedPref.getString("pseudoId", "");
         source = utmPrefs.getString("source", "");
         campaignId = utmPrefs.getString("campaign_id", "");
+        goBack = findViewById(R.id.button2);
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logAppExitEvent();
+                audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
+                finish();
+            }
+        });
     }
 
     private void loadWebView() {
@@ -127,7 +137,7 @@ public class WebApp extends BaseActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new WebAppInterface(this), "Android");
         WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
-                .setDomain("hausa_assessments_facilitators.androidplatform.net")
+                .setDomain("hausa_cr-ftm-standalone.androidplatform.net")
                 .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
                 .build();
         webView.setWebViewClient(new WebViewClient() {
@@ -154,7 +164,8 @@ public class WebApp extends BaseActivity {
         }
         if (appUrl.contains("docs.google.com/forms")) {
             webView.loadUrl(addCrUserIdToFormUrl(appUrl));
-        } else if (appUrl.contains("welcome_parent_video")) {
+        } else if (appUrl.contains("assessment")) {
+            goBack.setVisibility(View.GONE);
             webView.loadUrl(addCrUserIdToUrl(appUrl));
         } else {
             webView.loadUrl(addCrUserIdToUrl(appUrl));
@@ -254,14 +265,10 @@ public class WebApp extends BaseActivity {
 
         @JavascriptInterface
         public void closeWebView() {
-            Log.e("Assessment", "closeWebView called from JS");
-
-            ((Activity) mContext).runOnUiThread(() -> {
-
-                logAppExitEvent();
-                audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
-                ((Activity) mContext).finish();
-            });
+            goBack.setVisibility(View.GONE);
+            logAppExitEvent();
+            audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
+            finish();
         }
 
 
