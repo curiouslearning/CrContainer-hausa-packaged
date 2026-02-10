@@ -72,22 +72,6 @@
       "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksHausa",
       "language": "Hausa",
       "languageInEnglishName": "Hausa"
-    },
-    {
-      "appId": 9,
-      "appIconUrl": "assessment_icon_prod.png",
-      "title": "Assessment Letter Sounds Hausa",
-      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-lettersounds",
-      "language": "Hausa",
-      "languageInEnglishName": "Hausa"
-    },
-    {
-      "appId": 10,
-      "appIconUrl": "assessment_icon_sight_word.png",
-      "title": "Assessment Sight Words Hausa",
-      "appUrl": "https://hausa_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-sightwords",
-      "language": "Hausa",
-      "languageInEnglishName": "Hausa"
     }
   ]
 }
