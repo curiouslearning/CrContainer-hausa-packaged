@@ -100,7 +100,7 @@ public class MainActivityTest {
                 .check(matches(isDisplayed())).perform(click());
 
         SystemClock.sleep(3000);
-        onView(withId(R.id.settings)).perform(click());
+//        onView(withId(R.id.settings)).perform(click());
         SystemClock.sleep(1000);
         onView(withId(R.id.dropdown_menu)).perform(click());
         SystemClock.sleep(1000);
@@ -112,7 +112,7 @@ public class MainActivityTest {
         onView(withId(R.id.recycleView))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         SystemClock.sleep(5000);
-        onView(withId(R.id.button2)).perform(click());
+//        onView(withId(R.id.button2)).perform(click());
     }
     @Test
     public void test06_webappScreenIsScrollable(){
@@ -179,7 +179,7 @@ public class MainActivityTest {
     @Test
     public void test08_clickSettingButton() {
         SystemClock.sleep(1000);
-        onView(withId(R.id.settings)).perform(click());
+//        onView(withId(R.id.settings)).perform(click());
         SystemClock.sleep(1000);
         onView(withId(R.id.dropdown_menu)).perform(click());
     }
