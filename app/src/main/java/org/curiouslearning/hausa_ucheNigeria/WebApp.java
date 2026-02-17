@@ -109,14 +109,31 @@ public class WebApp extends BaseActivity {
         webView.setHorizontalScrollBarEnabled(false);
 
         // Check if this is FTM app
-        isFtmApp = appUrl.contains("FeedTheMonster");
+        final String urlLower = appUrl == null ? "" : appUrl.toLowerCase();
+        final String titleLower = title == null ? "" : title.toLowerCase();
+        isFtmApp = urlLower.contains("feedthemonster") || titleLower.contains("feed the monster");
 
-        // Create custom WebViewClient for FTM to handle monster state API
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().getDomStorageEnabled();
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.addJavascriptInterface(new WebAppInterface(this), "Android");
+        WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
+                .setDomain("hausa_cr-ftm-standalone.androidplatform.net")
+                .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
+                .build();
+
+        // Single WebViewClient: asset loading + FTM monster evolution.
+        // (Previously, the second setWebViewClient overwrote the first one, so onPageFinished never ran.)
         webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                return assetLoader.shouldInterceptRequest(request.getUrl());
+            }
+
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                // Query monster evolution state when FTM loads
                 if (isFtmApp) {
                     // Wait a bit for the API to be ready, then query
                     view.postDelayed(new Runnable() {
@@ -128,22 +145,6 @@ public class WebApp extends BaseActivity {
                         }
                     }, 2000); // Wait 2 seconds for FTM to initialize
                 }
-            }
-        });
-
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.getSettings().getDomStorageEnabled();
-        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.addJavascriptInterface(new WebAppInterface(this), "Android");
-        WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
-                .setDomain("hausa_cr-ftm-standalone.androidplatform.net")
-                .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
-                .build();
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-                return assetLoader.shouldInterceptRequest(request.getUrl());
             }
         });
         if (isFtmApp) {
@@ -299,6 +300,7 @@ public class WebApp extends BaseActivity {
                 Log.e("WebApp", "Unexpected error handling payload", e);
             }
         }
+
         @JavascriptInterface
         public void onMonsterEvolutionStateReceived(String jsonState) {
             Log.d("WebApp", "Monster evolution state received: " + jsonState);
@@ -306,23 +308,37 @@ public class WebApp extends BaseActivity {
             try {
                 // Parse JSON string
                 org.json.JSONObject stateJson = new org.json.JSONObject(jsonState);
-                String app = stateJson.optString("app", "");
-                int monsterPhase = stateJson.optInt("monsterPhase", 0);
-                int successStars = stateJson.optInt("successStars", 0);
                 boolean hasError = stateJson.has("error");
 
-                if ("feed_the_monster".equals(app) && !hasError) {
-                    // Store monster phase per language using a map structure
-                    storeMonsterPhaseForLanguage(languageInEnglishName, monsterPhase, successStars,
-                            stateJson.optLong("timestamp", System.currentTimeMillis()));
+                // NOTE: We only wire this bridge for FTM pages (see isFtmApp), so we should not
+                // hard-fail on an "app" string mismatch. Some FTM builds may omit/rename it.
+                if (!hasError) {
+                    // Try multiple possible JSON key names for phase and stars (tolerant parsing)
+                    int monsterPhase = computeMonsterPhase(stateJson);
+                    Integer stars = optIntFromAnyKey(stateJson,
+                            "successStars", "success_stars", "stars", "totalStars", "total_stars");
+                    int successStars = (stars != null) ? stars : 0;
+
+                    // Store monster phase per language using a map structure.
+                    // We store under the English name (used elsewhere in the container) and also
+                    // under the local language string as a compatibility fallback to prevent key
+                    // mismatches from breaking evolution display.
+                    if (languageInEnglishName != null && !languageInEnglishName.trim().isEmpty()) {
+                        storeMonsterPhaseForLanguage(languageInEnglishName, monsterPhase, successStars,
+                                stateJson.optLong("timestamp", System.currentTimeMillis()));
+                    }
+                    if (language != null && !language.trim().isEmpty()) {
+                        storeMonsterPhaseForLanguage(language, monsterPhase, successStars,
+                                stateJson.optLong("timestamp", System.currentTimeMillis()));
+                    }
 
                     // Also set global downloaded flag
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putBoolean("ftm_downloaded", true);
                     editor.apply();
 
-                    Log.d("WebApp", "Stored monster phase for language '" + languageInEnglishName +
-                            "': phase=" + monsterPhase + ", stars=" + successStars);
+                    Log.d("WebApp", "Stored monster phase. languageInEnglishName='" + languageInEnglishName
+                            + "', language='" + language + "', phase=" + monsterPhase + ", stars=" + successStars);
                 } else if (hasError) {
                     Log.w("WebApp", "Monster state not ready: " + stateJson.optString("error", "UNKNOWN"));
                 }
@@ -331,6 +347,67 @@ public class WebApp extends BaseActivity {
             }
         }
 
+        /**
+         * Determine monster phase from available state fields.
+         *
+         * FTM may provide either:
+         * - an explicit phase (e.g. monsterPhase), or
+         * - only success stars, in which case we compute phase using the existing
+         *   progression thresholds used by the container:
+         *   0: Egg
+         *   1: Hatched (≥12 stars)
+         *   2: Young (≥38 stars)
+         *   3: Adult (≥63 stars)
+         *
+         * This logic is intentionally tolerant of different JSON key spellings
+         * to avoid being stuck at phase 0 due to a missing/renamed field.
+         */
+        private int computeMonsterPhase(org.json.JSONObject stateJson) {
+            // Prefer an explicit phase if present under any known key.
+            Integer explicitPhase = optIntFromAnyKey(stateJson,
+                    "monsterPhase", "monster_phase", "phase", "monster_phase_index");
+            if (explicitPhase != null) {
+                // Clamp to the supported range to avoid invalid values breaking UI.
+                return Math.max(0, Math.min(3, explicitPhase));
+            }
+
+            // Otherwise compute from stars using the app's existing thresholds.
+            Integer stars = optIntFromAnyKey(stateJson,
+                    "successStars", "success_stars", "stars", "totalStars", "total_stars");
+            int successStars = (stars != null) ? stars : 0;
+
+            if (successStars >= 63) {
+                return 3;
+            } else if (successStars >= 38) {
+                return 2;
+            } else if (successStars >= 12) {
+                return 1;
+            }
+            return 0;
+        }
+
+        /**
+         * Returns the first present integer value for any of the provided keys.
+         * Returns null if none of the keys exist or values are not parseable.
+         */
+        private Integer optIntFromAnyKey(org.json.JSONObject obj, String... keys) {
+            if (obj == null || keys == null) {
+                return null;
+            }
+            for (String k : keys) {
+                if (k == null) {
+                    continue;
+                }
+                if (obj.has(k)) {
+                    try {
+                        return obj.getInt(k);
+                    } catch (Exception ignored) {
+                        // keep trying other keys
+                    }
+                }
+            }
+            return null;
+        }
         /**
          * Stores monster phase for a specific language in a JSON map structure
          */
@@ -367,24 +444,43 @@ public class WebApp extends BaseActivity {
     private void queryMonsterEvolutionState(WebView webView) {
         String javascript = "(function() {" +
                 "  try {" +
-                "    if (typeof window.getMonsterEvolutionState === 'function') {" +
-                "      var state = window.getMonsterEvolutionState();" +
-                "      if (state && window.Android && window.Android.onMonsterEvolutionStateReceived) {" +
-                "        window.Android.onMonsterEvolutionStateReceived(JSON.stringify(state));" +
-                "        console.log('Monster evolution state sent to Android:', state);" +
-                "        return true;" +
-                "      }" +
-                "    } else {" +
+                "    var fn = (window && window.getMonsterEvolutionState) || (globalThis && globalThis.getMonsterEvolutionState);" +
+                "    if (typeof fn !== 'function') {" +
                 "      console.log('getMonsterEvolutionState API not available yet');" +
+                "      return false;" +
                 "    }" +
-                "    return false;" +
+                "    var send = function(state) {" +
+                "      try {" +
+                "        if (!state) return false;" +
+                "        // Ensure we always have app + timestamp for Android-side filtering.\n" +
+                "        if (typeof state === 'object') {" +
+                "          state.app = state.app || 'feed_the_monster';" +
+                "          state.timestamp = state.timestamp || Date.now();" +
+                "        }" +
+                "        if (window.Android && window.Android.onMonsterEvolutionStateReceived) {" +
+                "          window.Android.onMonsterEvolutionStateReceived(JSON.stringify(state));" +
+                "          console.log('Monster evolution state sent to Android:', state);" +
+                "          return true;" +
+                "        }" +
+                "      } catch (e) { console.error('Error sending monster evolution state: ' + e.message); }" +
+                "      return false;" +
+                "    };" +
+                "    var state = fn();" +
+                "    if (state && typeof state.then === 'function') {" +
+                "      state.then(function(res) { send(res); }).catch(function(e) {" +
+                "        console.error('Error awaiting monster evolution state: ' + (e && e.message ? e.message : e));" +
+                "      });" +
+                "      return 'promise';" +
+                "    }" +
+                "    return send(state);" +
                 "  } catch (e) {" +
                 "    console.error('Error getting monster evolution state: ' + e.message);" +
                 "    return false;" +
                 "  }" +
                 "})();";
 
-        webView.evaluateJavascript(javascript, null);
+        webView.evaluateJavascript(javascript, value ->
+                Log.d("WebApp", "queryMonsterEvolutionState() returned: " + value));
     }
 
     /**

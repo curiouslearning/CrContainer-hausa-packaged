@@ -894,7 +894,7 @@ public class MainActivity extends BaseActivity {
                 if (!webApps.isEmpty()) {
                     apps.webApps = webApps;
                     apps.notifyDataSetChanged();
-                    storeSelectLanguage(language);
+                    storeSelectLanguage("hausa");
                 } else {
 //                    if (!prefs.getString("selectedLanguage", "").equals("") && language.equals("")) {
 //                        showLanguagePopup();
@@ -1041,7 +1041,7 @@ public class MainActivity extends BaseActivity {
         }
 
         // Get stored monster phase for the current selected language
-        int monsterPhase = getMonsterPhaseForLanguage(selectedLanguage);
+        int monsterPhase = getMonsterPhaseForLanguage("Hausa");
         loadMonsterAnimation(monsterView, monsterPhase);
         Log.d(TAG,
                 "updateMonsterAnimation: Showing monster phase " + monsterPhase + " for language: " + selectedLanguage);
