@@ -299,7 +299,7 @@ public class WebApp extends BaseActivity {
                 Log.e("WebApp", "Unexpected error handling payload", e);
             }
         }
-
+        @JavascriptInterface
         public void onMonsterEvolutionStateReceived(String jsonState) {
             Log.d("WebApp", "Monster evolution state received: " + jsonState);
 
