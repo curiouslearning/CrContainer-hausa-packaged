@@ -1,21 +1,93 @@
 {
-  "version": "1.96",
+  "version": "1.0",
   "web_apps": [
     {
       "appId": 0,
-      "appIconUrl": "assessment_icon_prod.png",
-      "title": "Assessment Letter Sounds Hausa",
-      "appUrl": "https://hausa_assessments_facilitators.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-lettersounds",
-      "language": "Hausa",
-      "languageInEnglishName": "Hausa"
+      "appIconUrl": "ftm_english.png",
+      "title": "Feed The Monster English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=english",
+      "language": "English",
+      "languageInEnglishName": "English"
     },
     {
       "appId": 1,
-      "appIconUrl": "assessment_icon_sight_word.png",
-      "title": "Assessment Sight Words Hausa",
-      "appUrl": "https://hausa_assessments_facilitators.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-sightwords",
-      "language": "Hausa",
-      "languageInEnglishName": "Hausa"
+      "appIconUrl": "ftm_tallandshort_prod.png",
+      "title": "Curious Reader Tall And Short English Level 4",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortEnglishLv4",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 2,
+      "appIconUrl": "who_Can_Help_Me.png",
+      "title": "Curious Reader Who Can Help Me English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 3,
+      "appIconUrl": "playground.png",
+      "title": "Curious Reader Playground English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 4,
+      "appIconUrl": "frogs_starry_wish.png",
+      "title": "Curious Reader Frog's Starry Wish English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 5,
+      "appIconUrl": "friends.png",
+      "title": "Curious Reader Friends English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 6,
+      "appIconUrl": "dads_boots.png",
+      "title": "Curious Reader Dad's Boots English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 7,
+      "appIconUrl": "chakus_cycle.png",
+      "title": "Curious Reader Chaku's Cycle English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 8,
+      "appIconUrl": "the_lion_runs.png",
+      "title": "Curious Reader The Lion Runs And The Cow Walks English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 9,
+      "appIconUrl": "ftm_english.png",
+      "title": "Feed The Monster Isizulu",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=zulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 10,
+      "appIconUrl": "assessment_icon_prod.png",
+      "title": "Assessment Isizulu Letter Sounds",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/assessments-survey-js/index.html?data=zulu-lettersounds",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
     }
   ]
 }
