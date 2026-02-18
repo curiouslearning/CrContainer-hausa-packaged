@@ -17,7 +17,7 @@ task printApiUrl {
 }
 
 android {
-    namespace 'org.curiouslearning.hausa_assessments_facilitators'
+    namespace 'org.curiouslearning.zulu_english_lungelo'
     compileSdk 35
     packagingOptions {
         pickFirst "lib/x86/libc++_shared.so"
