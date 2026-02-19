@@ -88,6 +88,14 @@
       "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/assessments-survey-js/index.html?data=zulu-lettersounds",
       "language": "Isizulu",
       "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 8,
+      "appIconUrl": "the_lion_runs.png",
+      "title": "Curious Reader The Lion Runs And The Cow Walks English",
+      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksEnglish",
+      "language": "English",
+      "languageInEnglishName": "English"
     }
   ]
 }
