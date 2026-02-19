@@ -5,97 +5,209 @@
       "appId": 0,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=english",
-      "language": "English",
+      "appUrl": "https://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=english",
+      "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 1,
-      "appIconUrl": "ftm_tallandshort_prod.png",
-      "title": "Curious Reader Tall And Short English Level 4",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortEnglishLv4",
-      "language": "English",
-      "languageInEnglishName": "English"
+      "appIconUrl": "ftm_zulu.png",
+      "title": "Feed The Monster Isizulu",
+      "appUrl": "https://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=zulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
     },
     {
       "appId": 2,
-      "appIconUrl": "who_Can_Help_Me.png",
-      "title": "Curious Reader Who Can Help Me English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeEnglish",
-      "language": "English",
-      "languageInEnglishName": "English"
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/chakus_cycle.png",
+      "title": "Curious Reader Chakus Cycle Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleIsiZulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
     },
     {
       "appId": 3,
-      "appIconUrl": "playground.png",
-      "title": "Curious Reader Playground English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundEnglish",
-      "language": "English",
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/LetsFly_icon.png",
+      "title": "Curious Reader Let's Fly English Level 2",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=LetsFlyEnLv2",
+      "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 4,
-      "appIconUrl": "frogs_starry_wish.png",
-      "title": "Curious Reader Frog's Starry Wish English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishEnglish",
-      "language": "English",
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_TheLostDoll_prod.png",
+      "title": "Curious Reader The Lost Doll English Level 4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLostDollEnLv4",
+      "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 5,
-      "appIconUrl": "friends.png",
-      "title": "Curious Reader Friends English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsEnglish",
-      "language": "English",
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_TheBeeAndTheElephant_prod.png",
+      "title": "Curious Reader The Bee And The Elephant English Level 4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheBeeAndTheElephantEnLv4",
+      "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 6,
-      "appIconUrl": "dads_boots.png",
-      "title": "Curious Reader Dad's Boots English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsEnglish",
-      "language": "English",
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_CicadasSong_prod.png",
+      "title": "Curious Reader Cicadas Song English Level 4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=CicadasSongEnLv4",
+      "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 7,
-      "appIconUrl": "chakus_cycle.png",
-      "title": "Curious Reader Chaku's Cycle English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleEnglish",
-      "language": "English",
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/colours_of_nature.png",
+      "title": "Curious Colours Of Nature English Level 2",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursOfNatureEnLv2",
+      "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 8,
-      "appIconUrl": "the_lion_runs.png",
-      "title": "Curious Reader The Lion Runs And The Cow Walks English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksEnglish",
-      "language": "English",
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/i_am_not_afraid.png",
+      "title": "Curious I Am Not Afraid Level 4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=IAmNotAfraidEnLv4",
+      "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 9,
-      "appIconUrl": "ftm_english.png",
-      "title": "Feed The Monster Isizulu",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=zulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_tallandshort_prod.png",
+      "title": "Curious Tall And Short Level 4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortEnLv4",
+      "language": "English - US",
+      "languageInEnglishName": "English"
     },
     {
       "appId": 10,
-      "appIconUrl": "assessment_icon_prod.png",
-      "title": "Assessment Isizulu Letter Sounds",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/assessments-survey-js/index.html?data=zulu-lettersounds",
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/friends.png",
+      "title": "Curious Reader Friends English Level 2",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsEnLv2",
+      "language": "English - US",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 11,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_Colours_prod.png",
+      "title": "Curious Reader Colours Level 4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursEnLv4",
+      "language": "English - US",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 12,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_HideAndSeek_prod.png",
+      "title": "Curious Reader Hide And Seek English Level 2",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=HideAndSeekEnLv2",
+      "language": "English - US",
+      "languageInEnglishName": "English"
+    },
+    {
+      "appId": 13,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/LetsFly_prod.png",
+      "title": "Curious Reader LetsFlyIsiZuluLv4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=LetsFlyIsiZuluLv4",
       "language": "Isizulu",
       "languageInEnglishName": "Zulu"
     },
     {
-      "appId": 8,
-      "appIconUrl": "the_lion_runs.png",
-      "title": "Curious Reader The Lion Runs And The Cow Walks English",
-      "appUrl": "https://English_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksEnglish",
-      "language": "English",
-      "languageInEnglishName": "English"
+      "appId": 14,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_HideAndSeek_prod.png",
+      "title": "Curious Reader HideAndSeekIsiZuluLv4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=HideAndSeekIsiZuluLv4",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 15,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_Colours_prod.png",
+      "title": "Curious Reader ColoursZuluLv4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursIsiZuluLv4",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 16,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_TheBeeAndTheElephant_prod.png",
+      "title": "Curious Reader TheBeeAndTheElephantZuluLv4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheBeeAndTheElephantIsiZuluLv4",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 17,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_TheLostDoll_prod.png",
+      "title": "Curious Reader TheLostDollZuluLv4",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLostDollIsiZuluLv4",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 18,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/the_lion_runs.png",
+      "title": "Curious Reader The Lion Runs Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksIsiZulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 19,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/dads_boots.png",
+      "title": "Curious Reader Dads Boots Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsIsiZulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 20,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/who_Can_Help_Me.png",
+      "title": "Curious Reader Who Can Help Me Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeIsiZulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 21,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/what_day_is_it.png",
+      "title": "Curious Reader What Day Is It Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhatDayIsItIsiZulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 22,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/ftm_tallandshort_prod.png",
+      "title": "Curious Reader Tall And Short Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortIsiZuluLv4",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 23,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/playground.png",
+      "title": "Curious Reader Playground Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundIsiZulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 24,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/my_first_day_at_the_market.png",
+      "title": "Curious Reader My First Day At The Market Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=MyFirstDayAtTheMarketIsizulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
+    },
+    {
+      "appId": 25,
+      "appIconUrl": "https://devcuriousreader.wpcomstaging.com/container_app_manifest/icons/frogs_starry_wish.png",
+      "title": "Curious Reader Frog's Starry Wish Isizulu",
+      "appUrl": "hhttps://Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishIsiZulu",
+      "language": "Isizulu",
+      "languageInEnglishName": "Zulu"
     }
   ]
 }
