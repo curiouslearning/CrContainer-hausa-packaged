@@ -160,6 +160,10 @@ public class MainActivity extends BaseActivity {
             // If referrer wasn't handled yet, we'll wait for referrer callback to send the
             // event
         }
+        if (selectedLanguage.equals("")) {
+            loadingIndicator.setVisibility(View.GONE);
+                                showLanguagePopup();
+                            }
 
 //        InstallReferrerManager.ReferrerCallback referrerCallback = new InstallReferrerManager.ReferrerCallback() {
 //            @Override
@@ -904,9 +908,9 @@ public class MainActivity extends BaseActivity {
                     apps.notifyDataSetChanged();
                     storeSelectLanguage(language);
                 } else {
-//                    if (!prefs.getString("selectedLanguage", "").equals("") && language.equals("")) {
-//                        showLanguagePopup();
-//                    }
+                    if (!prefs.getString("selectedLanguage", "").equals("") && language.equals("")) {
+                        showLanguagePopup();
+                    }
                     if (manifestVersion.equals("")) {
                         if (!selectedlanguage.equals(isValidLanguage))
                             loadingIndicator.setVisibility(View.VISIBLE);
