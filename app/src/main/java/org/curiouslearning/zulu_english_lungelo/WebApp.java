@@ -18,6 +18,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -56,7 +57,7 @@ public class WebApp extends BaseActivity {
     private static final String SHARED_PREFS_NAME = "appCached";
     private static final String UTM_PREFS_NAME = "utmPrefs";
     private AudioPlayer audioPlayer;
-
+    ImageView goBack;
     private android.os.Handler monsterStateCheckHandler;
     private Runnable monsterStateCheckRunnable;
     private boolean isFtmApp;
@@ -90,6 +91,15 @@ public class WebApp extends BaseActivity {
         pseudoId = sharedPref.getString("pseudoId", "");
         source = utmPrefs.getString("source", "");
         campaignId = utmPrefs.getString("campaign_id", "");
+                goBack = findViewById(R.id.button2);
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logAppExitEvent();
+                audioPlayer.play(WebApp.this, R.raw.sound_button_pressed);
+                finish();
+            }
+        });
     }
 
     private void loadWebView() {
@@ -127,7 +137,7 @@ public class WebApp extends BaseActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new WebAppInterface(this), "Android");
         WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
-                .setDomain("Lungelo_zulu_english_cr-ftm-standalone.androidplatform.net")
+                .setDomain("lungelo_zulu_english_cr-ftm-standalone.androidplatform.net")
                 .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
                 .build();
         webView.setWebViewClient(new WebViewClient() {
