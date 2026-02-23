@@ -161,7 +161,7 @@ public class MainActivity extends BaseActivity {
             // event
         }
         if (selectedLanguage.equals("")) {
-            loadingIndicator.setVisibility(View.GONE);
+
                                 showLanguagePopup();
                             }
 
@@ -314,7 +314,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        loadApps("hausa");
+        loadApps(selectedLanguage);
     }
 
     private void addBreathingEffect(View view) {
@@ -637,6 +637,7 @@ public class MainActivity extends BaseActivity {
 
    private void showLanguagePopup() {
        if (!dialog.isShowing()) {
+           loadingIndicator.setVisibility(View.GONE);
            dialog.setContentView(R.layout.language_popup);
 
            // Get the root view of the dialog content for animations
@@ -897,7 +898,7 @@ public class MainActivity extends BaseActivity {
 
     public void loadApps(String selectedlanguage) {
         Log.d(TAG, "loadApps: Loading apps for language: " + selectedLanguage);
-        loadingIndicator.setVisibility(View.VISIBLE);
+        loadingIndicator.setVisibility(View.GONE);
         final String language = selectedlanguage;
         homeViewModal.getSelectedlanguageWebApps(selectedlanguage).observe(this, new Observer<List<WebApp>>() {
             @Override
@@ -913,7 +914,7 @@ public class MainActivity extends BaseActivity {
                     }
                     if (manifestVersion.equals("")) {
                         if (!selectedlanguage.equals(isValidLanguage))
-                            loadingIndicator.setVisibility(View.VISIBLE);
+//                            loadingIndicator.setVisibility(View.VISIBLE);
                         homeViewModal.getAllWebApps();
                     }
                 }
