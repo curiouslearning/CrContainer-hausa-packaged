@@ -22,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -97,6 +98,12 @@ public class MainActivity extends BaseActivity {
     private GestureDetectorCompat gestureDetector;
     private TextView textView;
     private InstallReferrerManager.ReferrerStatus currentReferrerStatus;
+
+    // Observer de-duplication fields (Bug 1 & Bug 2 fix)
+    private Observer<List<WebApp>> selectedLangObserver;
+    private LiveData<List<WebApp>> selectedLangLiveData;
+    private Observer<List<WebApp>> allWebAppsObserver;
+    private LiveData<List<WebApp>> allWebAppsLiveData;
     private View debugTriggerArea;
     private int debugTapCount = 0;
     private long lastTapTime = 0;
@@ -274,8 +281,14 @@ public class MainActivity extends BaseActivity {
         initRecyclerView();
         Log.d(TAG, "onCreate: Selected language: " + selectedLanguage);
         Log.d(TAG, "onCreate: Manifest version: " + manifestVersion);
-        if (manifestVersion != null && manifestVersion != "") {
+        // Bug 3 fix: use .isEmpty() instead of != "" (reference equality), and also
+        // trigger a remote fetch on first install (empty manifestVersion) so all
+        // languages are available immediately without requiring a restart.
+        if (manifestVersion != null && !manifestVersion.isEmpty()) {
             homeViewModal.getUpdatedAppManifest(manifestVersion);
+        } else {
+            // First install: fetch full manifest from remote to populate all languages
+            homeViewModal.getUpdatedAppManifest("");
         }
         settingsButton = findViewById(R.id.settings);
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -684,7 +697,13 @@ public class MainActivity extends BaseActivity {
             autoCompleteTextView.setDropDownBackgroundResource(R.drawable.dropdown_background_transparent);
             final org.curiouslearning.zulu_english_lungelo.presentation.adapters.LanguageDropdownAdapter[] adapterRef = new org.curiouslearning.zulu_english_lungelo.presentation.adapters.LanguageDropdownAdapter[1];
 
-            homeViewModal.getAllWebApps().observe(this, new Observer<List<WebApp>>() {
+            // Bug 2 fix: remove any previously registered getAllWebApps observer before
+            // adding a new one to prevent observer stacking across multiple showLanguagePopup() calls.
+            if (allWebAppsLiveData != null && allWebAppsObserver != null) {
+                allWebAppsLiveData.removeObserver(allWebAppsObserver);
+            }
+            allWebAppsLiveData = homeViewModal.getAllWebApps();
+            allWebAppsObserver = new Observer<List<WebApp>>() {
                 @Override
                 public void onChanged(List<WebApp> webApps) {
                     Set<String> distinctLanguages = sortLanguages(webApps);
@@ -769,7 +788,8 @@ public class MainActivity extends BaseActivity {
                         });
                     }
                 }
-            });
+            };
+            allWebAppsLiveData.observe(this, allWebAppsObserver);
 
             gestureDetector = new GestureDetectorCompat(this, new GestureListener());
             if (invisibleBox != null) {
@@ -906,10 +926,17 @@ public class MainActivity extends BaseActivity {
     }
 
     public void loadApps(String selectedlanguage) {
-        Log.d(TAG, "loadApps: Loading apps for language: " + selectedLanguage);
+        Log.d(TAG, "loadApps: Loading apps for language: " + selectedlanguage);
         loadingIndicator.setVisibility(View.GONE);
         final String language = selectedlanguage;
-        homeViewModal.getSelectedlanguageWebApps(selectedlanguage).observe(this, new Observer<List<WebApp>>() {
+
+        // Bug 1 fix: remove any previously registered observer before adding a new one
+        // to prevent observer accumulation causing multiple simultaneous DB callbacks.
+        if (selectedLangLiveData != null && selectedLangObserver != null) {
+            selectedLangLiveData.removeObserver(selectedLangObserver);
+        }
+        selectedLangLiveData = homeViewModal.getSelectedlanguageWebApps(selectedlanguage);
+        selectedLangObserver = new Observer<List<WebApp>>() {
             @Override
             public void onChanged(List<WebApp> webApps) {
                 loadingIndicator.setVisibility(View.GONE);
@@ -917,18 +944,14 @@ public class MainActivity extends BaseActivity {
                     apps.webApps = webApps;
                     apps.notifyDataSetChanged();
                     storeSelectLanguage(language);
-                } else {
-                    if (!prefs.getString("selectedLanguage", "").equals("") && language.equals("")) {
-                        showLanguagePopup();
-                    }
-                    if (manifestVersion.equals("")) {
-                        if (!selectedlanguage.equals(isValidLanguage))
-                            // loadingIndicator.setVisibility(View.VISIBLE);
-                            homeViewModal.getAllWebApps();
-                    }
                 }
+                // Bug 2 fix: removed the erroneous showLanguagePopup() call here.
+                // The popup was re-shown whenever loadApps("" ) was called while a
+                // language was already stored in prefs, causing the reappearing popup
+                // behaviour on certain devices.
             }
-        });
+        };
+        selectedLangLiveData.observe(this, selectedLangObserver);
     }
 
     private void storeSelectLanguage(String language) {

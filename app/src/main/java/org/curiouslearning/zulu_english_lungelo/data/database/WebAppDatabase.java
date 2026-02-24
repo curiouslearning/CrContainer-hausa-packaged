@@ -66,9 +66,7 @@ public class WebAppDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            webAppDao.deleteAllWebApp();
-            webAppDao.insertAll( webApps);
-
+            webAppDao.replaceAll(webApps);
             return null;
         }
     }

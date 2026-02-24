@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import org.curiouslearning.zulu_english_lungelo.data.model.WebApp;
 import java.util.List;
 
@@ -19,6 +20,12 @@ public interface WebAppDao {
 
     @Query("DELETE FROM web_app_table")
     void deleteAllWebApp();
+
+    @Transaction
+    default void replaceAll(List<WebApp> webApps) {
+        deleteAllWebApp();
+        insertAll(webApps);
+    }
 
     @Query("SELECT * FROM web_app_table where LOWER(languageInEnglishName) = LOWER(:selectedLanguage) ORDER BY appId ASC")
     LiveData<List<WebApp>> getSelectedlanguageWebApps(String selectedLanguage);

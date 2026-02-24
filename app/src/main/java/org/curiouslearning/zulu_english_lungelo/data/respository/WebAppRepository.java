@@ -32,19 +32,12 @@ public class WebAppRepository {
     }
 
     public void fetchWebApp() {
+        if (isFetching) {
+            return;
+        }
+        isFetching = true;
         ManifestLoader.getInstance().loadLocalManifest(application.getApplicationContext(), webAppDatabase);
-//        if (isFetching) {
-//            return;
-//        }
-//        if (ConnectionUtils.getInstance().isInternetConnected(application)) {
-//            isFetching = true;
-//            retrofitInstance.fetchAndCacheWebApps(webAppDatabase, new RetrofitInstance.FetchCallback() {
-//                @Override
-//                public void onComplete() {
-//                    isFetching = false;
-//                }
-//            });
-//        }
+        isFetching = false;
     }
 
     public LiveData<List<WebApp>> getSelectedlanguageWebApps(String selectedLanguage, LifecycleOwner lifecycleOwner) {
