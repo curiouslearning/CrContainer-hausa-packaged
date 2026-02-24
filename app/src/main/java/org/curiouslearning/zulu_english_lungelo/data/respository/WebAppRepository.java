@@ -77,9 +77,5 @@ public class WebAppRepository {
         return webAppDatabase.getAllLanguagesInEnglish();
     }
 
-    public void getUpdatedAppManifest(String manifestVersion) {
-        if (ConnectionUtils.getInstance().isInternetConnected(application)) {
-            retrofitInstance.getUpdatedAppManifest(webAppDatabase, manifestVersion);
-        }
-    }
+
 }

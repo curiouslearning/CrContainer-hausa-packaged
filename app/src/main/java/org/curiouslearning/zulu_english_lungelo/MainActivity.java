@@ -284,12 +284,7 @@ public class MainActivity extends BaseActivity {
         // Bug 3 fix: use .isEmpty() instead of != "" (reference equality), and also
         // trigger a remote fetch on first install (empty manifestVersion) so all
         // languages are available immediately without requiring a restart.
-        if (manifestVersion != null && !manifestVersion.isEmpty()) {
-            homeViewModal.getUpdatedAppManifest(manifestVersion);
-        } else {
-            // First install: fetch full manifest from remote to populate all languages
-            homeViewModal.getUpdatedAppManifest("");
-        }
+
         settingsButton = findViewById(R.id.settings);
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override

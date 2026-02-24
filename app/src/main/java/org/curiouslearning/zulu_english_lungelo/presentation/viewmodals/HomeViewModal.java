@@ -36,7 +36,5 @@ public class HomeViewModal extends AndroidViewModel {
         return webAppRepository.getAllWebApps(lifecycleOwner);
     }
 
-    public void getUpdatedAppManifest(String manifestVersion) {
-        webAppRepository.getUpdatedAppManifest(manifestVersion);
-    }
+
 }
