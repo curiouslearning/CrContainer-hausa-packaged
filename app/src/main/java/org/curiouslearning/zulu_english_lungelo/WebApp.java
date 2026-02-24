@@ -109,7 +109,7 @@ public class WebApp extends BaseActivity {
         webView.setHorizontalScrollBarEnabled(false);
 
         // Check if this is FTM app
-        isFtmApp = appUrl.contains("feedthemonster");
+        isFtmApp = appUrl.contains("FeedTheMonster");
 
         // Create custom WebViewClient for FTM to handle monster state API
         webView.setWebViewClient(new WebViewClient() {
