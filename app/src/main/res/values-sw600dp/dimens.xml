@@ -7,5 +7,5 @@
     <!-- RecyclerView positioning for larger screens -->
     <!-- values-sw600dp/dimens.xml -->
     <dimen name="recycler_view_height_large">400dp</dimen>
-
+    <dimen name="dropdown_menu_width">220dp</dimen>
 </resources>

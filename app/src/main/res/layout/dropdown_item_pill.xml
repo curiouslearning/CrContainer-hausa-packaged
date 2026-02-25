@@ -9,6 +9,7 @@
     android:paddingTop="14dp"
     android:paddingBottom="14dp"
     android:minHeight="64dp"
+    android:layout_marginBottom="@dimen/dropdown_item_spacing"
     android:background="@drawable/dropdown_item_pill_default">
 
     <TextView
