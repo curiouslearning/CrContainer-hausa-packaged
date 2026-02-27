@@ -94,7 +94,7 @@
         android:id="@+id/setting_close"
         android:layout_width="67dp"
         android:layout_height="63dp"
-        android:layout_marginBottom="376dp"
+        android:layout_marginBottom="350dp"
         android:contentDescription="@string/setting_box_close"
         android:scaleType="fitEnd"
         app:layout_constraintBottom_toBottomOf="@+id/settings_box"
