@@ -212,21 +212,13 @@
     {
       "appId": 26,
       "appIconUrl": "assessment_icon_prod.png",
-      "title": "Assessment Letter Sounds Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=zulu-lettersounds",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
-    },
-    {
-      "appId": 27,
-      "appIconUrl": "assessment_icon_prod.png",
       "title": "Assessment Letter Sounds English",
       "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=west-african-english-lettersounds",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
-      "appId": 28,
+      "appId": 27,
       "appIconUrl": "assessment_icon_sight_word.png",
       "title": "Assessment Sight Words English",
       "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=west-african-sightwords",
