@@ -11,7 +11,6 @@ import org.curiouslearning.zulu_english_lungelo.data.database.WebAppDatabase;
 import org.curiouslearning.zulu_english_lungelo.data.model.WebApp;
 import org.curiouslearning.zulu_english_lungelo.data.local.ManifestLoader;
 import org.curiouslearning.zulu_english_lungelo.data.remote.RetrofitInstance;
-import org.curiouslearning.zulu_english_lungelo.utilities.ConnectionUtils;
 
 import java.util.Collections;
 import java.util.List;
