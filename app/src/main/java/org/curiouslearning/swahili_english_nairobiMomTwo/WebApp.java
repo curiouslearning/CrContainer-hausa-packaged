@@ -137,7 +137,7 @@ public class WebApp extends BaseActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new WebAppInterface(this), "Android");
         WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
-                .setDomain("swahili-english-nairobiMomTwo-cr-ftm-standalone.androidplatform.net")
+                .setDomain("swahili-english-nairobimomtwo-cr-ftm-standalone.androidplatform.net")
                 .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
                 .build();
         webView.setWebViewClient(new WebViewClient() {
