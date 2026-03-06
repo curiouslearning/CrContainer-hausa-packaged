@@ -123,9 +123,9 @@
     },
     {
       "appId": 15,
-      "appIconUrl": "friends.png",
-      "title": "Curious Reader Friends Swahili Level 4",
-      "appUrl": "https://swahili-english-nairobimomone-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsSwahiliLv4",
+      "appIconUrl": "playground.png",
+      "title": "Curious Reader Playground Swahili",
+      "appUrl": "https://swahili-english-nairobimomone-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundSwahili",
       "language": "Kiswahili",
       "languageInEnglishName":"Swahili"
     },
@@ -181,16 +181,8 @@
       "appId": 22,
       "appIconUrl": "ftm_tallandshort_prod.png",
       "title": "Curious Reader Tall And Short Swahili",
-      "appUrl": "https://swahili-english-nairobimomone-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortSwahili",
+      "appUrl": "https://swahili-english-nairobimomone-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortSwahiliLv4",
        "language": "Kiswahili",
-      "languageInEnglishName":"Swahili"
-    },
-    {
-      "appId": 23,
-      "appIconUrl": "playground.png",
-      "title": "Curious Reader Playground Swahili",
-      "appUrl": "https://swahili-english-nairobimomone-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundSwahili",
-      "language": "Kiswahili",
       "languageInEnglishName":"Swahili"
     }
   ]
