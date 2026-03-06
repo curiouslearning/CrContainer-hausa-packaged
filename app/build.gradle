@@ -17,7 +17,7 @@ task printApiUrl {
 }
 
 android {
-    namespace 'org.curiouslearning.zulu_english_lungelo'
+    namespace 'org.curiouslearning.swahili_english_nairobiMomOne'
     compileSdk 35
     packagingOptions {
         pickFirst "lib/x86/libc++_shared.so"
@@ -26,7 +26,7 @@ android {
         pickFirst "lib/arm64-v8a/libc++_shared.so"
     }
     defaultConfig {
-        applicationId "org.curiouslearning.zulu_english_lungelo"
+        applicationId "org.curiouslearning.swahili_english_nairobiMomOne"
         minSdk 24
         targetSdk 35
         versionCode 1
