@@ -5,31 +5,31 @@
       "appId": 0,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster English",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=english",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=english",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 1,
-      "appIconUrl": "ftm_zulu.png",
-      "title": "Feed The Monster Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=zulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "appIconUrl": "ftm_swahili.png",
+      "title": "Feed The Monster Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=swahili",
+      "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 2,
       "appIconUrl": "chakus_cycle.png",
-      "title": "Curious Reader Chakus Cycle Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "title": "Curious Reader Chakus Cycle Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleSwahili",
+       "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 3,
       "appIconUrl": "LetsFly_prod.png",
       "title": "Curious Reader Let's Fly English Level 2",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=LetsFlyEnLv2",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=LetsFlyEnLv2",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
@@ -37,7 +37,7 @@
       "appId": 4,
       "appIconUrl": "ftm_TheLostDoll_prod.png",
       "title": "Curious Reader The Lost Doll English Level 4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLostDollEnLv4",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLostDollEnLv4",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
@@ -45,7 +45,7 @@
       "appId": 5,
       "appIconUrl": "ftm_TheBeeAndTheElephant_prod.png",
       "title": "Curious Reader The Bee And The Elephant English Level 4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheBeeAndTheElephantEnLv4",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheBeeAndTheElephantEnLv4",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
@@ -53,7 +53,7 @@
       "appId": 6,
       "appIconUrl": "CicadasSong.png",
       "title": "Curious Reader Cicadas Song English Level 4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=CicadasSongEnLv4",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=CicadasSongEnLv4",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
@@ -61,7 +61,7 @@
       "appId": 7,
       "appIconUrl": "colours_of_nature.png",
       "title": "Curious Colours Of Nature English Level 2",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursOfNatureEnLv2",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursOfNatureEnLv2",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
@@ -69,7 +69,7 @@
       "appId": 8,
       "appIconUrl": "i_am_not_afraid.png",
       "title": "Curious I Am Not Afraid Level 4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=IAmNotAfraidEnLv4",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=IAmNotAfraidEnLv4",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
@@ -77,23 +77,23 @@
       "appId": 9,
       "appIconUrl": "ftm_tallandshort_prod.png",
       "title": "Curious Tall And Short Level 4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortEnLv4",
-      "language": "English - US",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortEnLv4",
+     "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 10,
       "appIconUrl": "friends.png",
       "title": "Curious Reader Friends English Level 2",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsEnLv2",
-      "language": "English - US",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsEnLv2",
+       "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 11,
       "appIconUrl": "Colours.png",
       "title": "Curious Reader Colours Level 4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursEnLv4",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursEnLv4",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
@@ -101,129 +101,97 @@
       "appId": 12,
       "appIconUrl": "ftm_HideAndSeek_prod.png",
       "title": "Curious Reader Hide And Seek English Level 2",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=HideAndSeekEnLv2",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=HideAndSeekEnLv2",
       "language": "English - US",
       "languageInEnglishName": "English"
     },
     {
       "appId": 13,
-      "appIconUrl": "LetsFly_prod.png",
-      "title": "Curious Reader LetsFlyIsiZuluLv4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=LetsFlyIsiZuluLv4",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "appIconUrl": "assessment_icon_sight_word.png",
+      "title": "Assessment Sight Words English",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=west-african-sightwords",
+      "language": "English - US",
+      "languageInEnglishName": "English"
     },
     {
       "appId": 14,
-      "appIconUrl": "ftm_HideAndSeek_prod.png",
-      "title": "Curious Reader HideAndSeekIsiZuluLv4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=HideAndSeekIsiZuluLv4",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "appIconUrl": "friends.png",
+      "title": "Curious Reader Friends Swahili Level 4",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsSwahiliLv4",
+      "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 15,
-      "appIconUrl": "Colours.png",
-      "title": "Curious Reader ColoursZuluLv4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursIsiZuluLv4",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "appIconUrl": "friends.png",
+      "title": "Curious Reader Friends Swahili Level 4",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FriendsSwahiliLv4",
+      "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 16,
-      "appIconUrl": "ftm_TheBeeAndTheElephant_prod.png",
-      "title": "Curious Reader TheBeeAndTheElephantZuluLv4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheBeeAndTheElephantIsiZuluLv4",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "appIconUrl": "frogs_starry_wish.png",
+      "title": "Curious Reader Frog's Starry Wish Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishSwahili",
+      "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 17,
-      "appIconUrl": "ftm_TheLostDoll_prod.png",
-      "title": "Curious Reader TheLostDollZuluLv4",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLostDollIsiZuluLv4",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "appIconUrl": "assessment_icon_prod.png",
+      "title": "Assessment Letter Sounds English",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=west-african-english-lettersounds",
+      "language": "English - US",
+      "languageInEnglishName": "English"
     },
     {
       "appId": 18,
       "appIconUrl": "the_lion_runs.png",
-      "title": "Curious Reader The Lion Runs Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "title": "Curious Reader The Lion Runs Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksSwahili",
+       "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 19,
       "appIconUrl": "dads_boots.png",
-      "title": "Curious Reader Dads Boots Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "title": "Curious Reader Dads Boots Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsSwahili",
+      "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 20,
       "appIconUrl": "who_Can_Help_Me.png",
-      "title": "Curious Reader Who Can Help Me Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "title": "Curious Reader Who Can Help Me Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeSwahili",
+       "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 21,
       "appIconUrl": "what_day_is_it.png",
-      "title": "Curious Reader What Day Is It Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhatDayIsItIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "title": "Curious Reader What Day Is It Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhatDayIsItSwahili",
+       "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 22,
       "appIconUrl": "ftm_tallandshort_prod.png",
-      "title": "Curious Reader Tall And Short Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortIsiZuluLv4",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
+      "title": "Curious Reader Tall And Short Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortSwahili",
+       "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     },
     {
       "appId": 23,
       "appIconUrl": "playground.png",
-      "title": "Curious Reader Playground Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
-    },
-    {
-      "appId": 24,
-      "appIconUrl": "my_first_day_at_the_market.png",
-      "title": "Curious Reader My First Day At The Market Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=MyFirstDayAtTheMarketIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
-    },
-    {
-      "appId": 25,
-      "appIconUrl": "frogs_starry_wish.png",
-      "title": "Curious Reader Frog's Starry Wish Isizulu",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishIsiZulu",
-      "language": "Isizulu",
-      "languageInEnglishName": "Zulu"
-    },
-    {
-      "appId": 26,
-      "appIconUrl": "assessment_icon_prod.png",
-      "title": "Assessment Letter Sounds English",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=west-african-english-lettersounds",
-      "language": "English - US",
-      "languageInEnglishName": "English"
-    },
-    {
-      "appId": 27,
-      "appIconUrl": "assessment_icon_sight_word.png",
-      "title": "Assessment Sight Words English",
-      "appUrl": "https://lungelo_zulu_english_cr-ftm-standalone.androidplatform.net/assets/assessment-survey-js/index.html?data=west-african-sightwords",
-      "language": "English - US",
-      "languageInEnglishName": "English"
+      "title": "Curious Reader Playground Swahili",
+      "appUrl": "https://swahili-english-nairobiMom-cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundSwahili",
+      "language": "Kiswahili",
+      "languageInEnglishName":"Swahili"
     }
   ]
 }
