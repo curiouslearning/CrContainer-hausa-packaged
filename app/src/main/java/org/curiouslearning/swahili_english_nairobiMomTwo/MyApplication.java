@@ -4,7 +4,6 @@ import android.app.Application;
 import androidx.startup.AppInitializer;
 import app.rive.runtime.kotlin.RiveInitializer;
 
-import io.sentry.android.core.SentryAndroid;
 
 public class MyApplication extends Application {
     @Override
@@ -15,18 +14,6 @@ public class MyApplication extends Application {
         // FacebookSdk.setAutoInitEnabled(true);
         // FacebookSdk.fullyInitialize();
         // FacebookSdk.setAdvertiserIDCollectionEnabled(true);
-
-        SentryAndroid.init(this, options -> {
-            options.setDsn(
-                    "https://3e3bfa9bd4473edd4e0b0d502195f4de@o4504951275651072.ingest.us.sentry.io/4510001311383552"); // replace
-                                                                                                                        // with
-                                                                                                                        // your
-                                                                                                                        // DSN
-            options.setEnvironment(BuildConfig.BUILD_TYPE);
-
-        });
-        AppInitializer.getInstance(this)
-                .initializeComponent(RiveInitializer.class);
 
     }
 }

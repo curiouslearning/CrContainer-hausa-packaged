@@ -30,7 +30,6 @@ import org.curiouslearning.swahili_english_nairobiMomTwo.firebase.AnalyticsUtils
 import org.curiouslearning.swahili_english_nairobiMomTwo.presentation.base.BaseActivity;
 import org.curiouslearning.swahili_english_nairobiMomTwo.utilities.ConnectionUtils;
 import org.curiouslearning.swahili_english_nairobiMomTwo.utilities.AudioPlayer;
-import io.sentry.Sentry;
 
 import org.curiouslearning.swahili_english_nairobiMomTwo.core.subapp.payload.AppEventPayload;
 import org.curiouslearning.swahili_english_nairobiMomTwo.core.subapp.validation.AppEventPayloadValidator;
@@ -152,13 +151,13 @@ public class WebApp extends BaseActivity {
             if (source != null && !source.isEmpty()) {
                 appUrl = addSourceToUrl(appUrl);
             } else {
-                Sentry.captureMessage("Missing source when building URL for app: " + appUrl);
+
                 Log.w("WebApp", "Missing source parameter for app: " + appUrl);
             }
             if (campaignId != null && !campaignId.isEmpty()) {
                 appUrl = addCampaignIdToUrl(appUrl);
             } else {
-                Sentry.captureMessage("Missing campaign_id when building URL for app: " + appUrl);
+
                 Log.w("WebApp", "Missing campaign_id parameter for app: " + appUrl);
             }
         }
@@ -184,7 +183,7 @@ public class WebApp extends BaseActivity {
         String modifiedUrl = originalUri.toString() + separator + "cr_user_id=" +
                 pseudoId;
         if (pseudoId == null || pseudoId.isEmpty()) {
-            Sentry.captureMessage("Missing cr_user_id for app: " + appUrl);
+           
             Log.e("WebApp", "Missing cr_user_id when building URL");
         }
         return modifiedUrl;

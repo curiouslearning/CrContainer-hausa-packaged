@@ -69,7 +69,7 @@ import app.rive.runtime.kotlin.RiveAnimationView;
 import app.rive.runtime.kotlin.core.Alignment;
 import app.rive.runtime.kotlin.core.Fit;
 import app.rive.runtime.kotlin.core.Loop;
-import io.sentry.Sentry;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -624,7 +624,7 @@ public class MainActivity extends BaseActivity {
                         new IllegalArgumentException(errorMsg));
                 // Slack alert
                 SlackUtils.sendMessageToSlack(MainActivity.this, String.valueOf(message));
-                Sentry.captureMessage("Missing Language when selecting Language ");
+
                 showLanguagePopup();
                 return;
             }
@@ -635,7 +635,7 @@ public class MainActivity extends BaseActivity {
                 if (lowerCaseLanguages != null && lowerCaseLanguages.size() > 0
                         && !lowerCaseLanguages.contains(language.toLowerCase().trim())) {
                     SlackUtils.sendMessageToSlack(MainActivity.this, String.valueOf(message));
-                    Sentry.captureMessage("Incorrect Language when selecting Language ");
+
                     showLanguagePopup();
                     loadingIndicator.setVisibility(View.GONE);
                     selectedLanguage = "";
