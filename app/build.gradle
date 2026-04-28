@@ -4,7 +4,7 @@ plugins {
     id 'com.google.firebase.crashlytics'
     id 'jacoco'
 
-    id 'io.sentry.android.gradle' version '5.10.0'
+
 }
 def buildBranch = project.hasProperty("buildBranch") ? project.getProperty("buildBranch") : "main"
 def apiUrl = buildBranch == "main" ?
@@ -109,10 +109,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation(platform("io.sentry:sentry-bom:7.17.0"))
-    implementation("io.sentry:sentry-android") {
-        exclude group: "io.sentry", module: "sentry-android-ndk"
-    }
+
     implementation 'app.rive:rive-android:5.1.0'
     // For initialization, you may want to add a dependency on Jetpack Startup
     implementation "androidx.startup:startup-runtime:1.1.1"
@@ -191,14 +188,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
 }
 
 
-sentry {
-    org = "curious-learning"
-    projectName = "cr-container"
 
-    // this will upload your source code to Sentry to show it as part of the stack traces
-    // disable if you don't want to expose your sources
-    includeSourceContext = true
-}
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
