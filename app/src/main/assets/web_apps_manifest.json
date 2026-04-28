@@ -5,7 +5,7 @@
       "appId": 0,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster Afrikaans",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=afrikaans",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=afrikaans",
       "language": "Afrikaans",
       "languageInEnglishName": "Afrikaans"
     },
@@ -13,7 +13,7 @@
       "appId": 1,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster isiXhosa",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=isixhosa",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=isixhosa",
       "language": "isiXhosa",
       "languageInEnglishName": "Xhosa"
     },
@@ -21,7 +21,7 @@
       "appId": 2,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster isiNdebele",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=ndebele",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=ndebele",
       "language": "isiNdebele",
       "languageInEnglishName": "Ndebele"
     },
@@ -29,7 +29,7 @@
       "appId": 3,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster Sepedi",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=sepedi",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=sepedi",
       "language": "Sepedi",
       "languageInEnglishName": "Sepedi"
     },
@@ -37,7 +37,7 @@
       "appId": 4,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster Sesotho",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=sesotho",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=sesotho",
       "language": "Sesotho",
       "languageInEnglishName": "Sesotho"
     },
@@ -45,7 +45,7 @@
       "appId": 5,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster siSwati",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=siswati",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=siswati",
       "language": "siSwati",
       "languageInEnglishName": "Swati"
     },
@@ -53,7 +53,7 @@
       "appId": 6,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster South African English",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=southafricanenglish",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=southafricanenglish",
       "language": "English - South Africa",
       "languageInEnglishName": "English"
     },
@@ -61,7 +61,7 @@
       "appId": 7,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster Xitsonga",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=tsonga",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=tsonga",
       "language": "Xitsonga",
       "languageInEnglishName": "Tsonga"
     },
@@ -69,7 +69,7 @@
       "appId": 8,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster Setswana",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=tswana",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=tswana",
       "language": "Setswana",
       "languageInEnglishName": "Tswana"
     },
@@ -77,7 +77,7 @@
       "appId": 9,
       "appIconUrl": "ftm_english.png",
       "title": "Feed The Monster Tshivenda",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=venda",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=venda",
       "language": "Tshivenda",
       "languageInEnglishName": "Venda"
     },
@@ -85,7 +85,7 @@
       "appId": 10,
       "appIconUrl": "ftm_zulu.png",
       "title": "Feed The Monster isiZulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=zulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/FeedTheMonsterJs/index.html?cr_lang=zulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -93,7 +93,7 @@
       "appId": 11,
       "appIconUrl": "chakus_cycle.png",
       "title": "Curious Reader Chakus Cycle Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ChakusCycleIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -101,7 +101,7 @@
       "appId": 12,
       "appIconUrl": "Colours.png",
       "title": "Curious Reader Colours Zulu Level 4",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursIsiZuluLv4",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=ColoursIsiZuluLv4",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -109,7 +109,7 @@
       "appId": 13,
       "appIconUrl": "dads_boots.png",
       "title": "Curious Reader Dads Boots Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=DadsBootsIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -117,7 +117,7 @@
       "appId": 14,
       "appIconUrl": "frogs_starry_wish.png",
       "title": "Curious Reader Frog's Starry Wish Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=FrogsStarryWishIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -125,7 +125,7 @@
       "appId": 15,
       "appIconUrl": "ftm_HideAndSeek_prod.png",
       "title": "Curious Reader Hide And Seek Zulu Level 4",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=HideAndSeekIsiZuluLv4",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=HideAndSeekIsiZuluLv4",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -133,7 +133,7 @@
       "appId": 16,
       "appIconUrl": "LetsFly_prod.png",
       "title": "Curious Reader Let's Fly Zulu Level 4",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=LetsFlyIsiZuluLv4",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=LetsFlyIsiZuluLv4",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -141,7 +141,7 @@
       "appId": 17,
       "appIconUrl": "my_first_day_at_the_market.png",
       "title": "Curious Reader My First Day At The Market Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=MyFirstDayAtTheMarketIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=MyFirstDayAtTheMarketIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -149,7 +149,7 @@
       "appId": 18,
       "appIconUrl": "playground.png",
       "title": "Curious Reader Playground Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=PlaygroundIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -157,7 +157,7 @@
       "appId": 19,
       "appIconUrl": "ftm_tallandshort_prod.png",
       "title": "Curious Reader Tall And Short Zulu Level 4",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortIsiZuluLv4",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TallAndShortIsiZuluLv4",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -165,7 +165,7 @@
       "appId": 20,
       "appIconUrl": "ftm_TheBeeAndTheElephant_prod.png",
       "title": "Curious Reader The Bee And The Elephant Zulu Level 4",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheBeeAndTheElephantIsiZuluLv4",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheBeeAndTheElephantIsiZuluLv4",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -173,7 +173,7 @@
       "appId": 21,
       "appIconUrl": "the_lion_runs.png",
       "title": "Curious Reader The Lion Runs And The Cow Walks Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLionRunsAndTheCowWalksIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -181,7 +181,7 @@
       "appId": 22,
       "appIconUrl": "ftm_TheLostDoll_prod.png",
       "title": "Curious Reader The Lost Doll Zulu Level 4",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLostDollIsiZuluLv4",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=TheLostDollIsiZuluLv4",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -189,7 +189,7 @@
       "appId": 23,
       "appIconUrl": "what_day_is_it.png",
       "title": "Curious Reader What Day Is It Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhatDayIsItIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhatDayIsItIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     },
@@ -197,7 +197,7 @@
       "appId": 24,
       "appIconUrl": "who_Can_Help_Me.png",
       "title": "Curious Reader Who Can Help Me Zulu",
-      "appUrl": "https://nairobimomone_swahili_english_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeIsiZulu",
+      "appUrl": "https://maharishi_cr-ftm-standalone.androidplatform.net/assets/CRWebPlayerJs/index.html?book=WhoCanHelpMeIsiZulu",
       "language": "isiZulu",
       "languageInEnglishName": "Zulu"
     }
