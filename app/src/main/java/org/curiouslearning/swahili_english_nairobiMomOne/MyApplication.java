@@ -4,7 +4,7 @@ import android.app.Application;
 import androidx.startup.AppInitializer;
 import app.rive.runtime.kotlin.RiveInitializer;
 
-import io.sentry.android.core.SentryAndroid;
+
 
 public class MyApplication extends Application {
     @Override
