@@ -18,6 +18,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -61,14 +62,22 @@ import java.util.TimeZone;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 import android.util.Log;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.core.view.GestureDetectorCompat;
 import app.rive.runtime.kotlin.RiveAnimationView;
 import app.rive.runtime.kotlin.core.Alignment;
 import app.rive.runtime.kotlin.core.Fit;
 import app.rive.runtime.kotlin.core.Loop;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.qrcode.QRCodeWriter;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 
 
 public class MainActivity extends BaseActivity {
@@ -98,7 +107,9 @@ public class MainActivity extends BaseActivity {
     private GestureDetectorCompat gestureDetector;
     private TextView textView;
     private InstallReferrerManager.ReferrerStatus currentReferrerStatus;
-
+    private FrameLayout qrOverlay;
+    private ImageView qrCodeImageView;
+    private Button showIdButton;
     // Observer de-duplication fields (Bug 1 & Bug 2 fix)
     private Observer<List<WebApp>> selectedLangObserver;
     private LiveData<List<WebApp>> selectedLangLiveData;
@@ -327,6 +338,52 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
+        qrOverlay = findViewById(R.id.qr_overlay);
+        qrCodeImageView = findViewById(R.id.qr_code_image);
+        showIdButton = findViewById(R.id.show_id_button);
+
+        String pseudoId = prefs.getString("pseudoId", "");
+        if (qrCodeImageView != null) {
+            generateQRCode(pseudoId, qrCodeImageView);
+        }
+
+        if (showIdButton != null) {
+            showIdButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (qrOverlay != null) {
+                        qrOverlay.setVisibility(View.VISIBLE);
+                        showIdButton.setVisibility(View.GONE);
+                    }
+                }
+            });
+        }
+
+        if (qrOverlay != null) {
+            qrOverlay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    qrOverlay.setVisibility(View.GONE);
+                    if (showIdButton != null) {
+                        showIdButton.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
+
+        if (qrCodeImageView != null) {
+            qrCodeImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("Unique ID", pseudoId);
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(MainActivity.this, "Unique ID copied to clipboard", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
         loadApps(selectedLanguage);
     }
 
@@ -518,6 +575,23 @@ public class MainActivity extends BaseActivity {
     // });
     // }
 
+    private void generateQRCode(String text, ImageView imageView) {
+        if (imageView == null) return;
+        QRCodeWriter writer = new QRCodeWriter();
+        try {
+            int size = 512;
+            com.google.zxing.common.BitMatrix bitMatrix = writer.encode(text, BarcodeFormat.QR_CODE, size, size);
+            Bitmap bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.RGB_565);
+            for (int x = 0; x < size; x++) {
+                for (int y = 0; y < size; y++) {
+                    bitmap.setPixel(x, y, bitMatrix.get(x, y) ? android.graphics.Color.BLACK : android.graphics.Color.WHITE);
+                }
+            }
+            imageView.setImageBitmap(bitmap);
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
+    }
     protected void initRecyclerView() {
         recyclerView = findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(
