@@ -18,6 +18,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -35,6 +36,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import org.curiouslearning.allSA_maharishi.data.model.WebApp;
 import org.curiouslearning.allSA_maharishi.databinding.ActivityMainBinding;
 import org.curiouslearning.allSA_maharishi.firebase.AnalyticsUtils;
+import org.curiouslearning.allSA_maharishi.firebase.FirestoreUtils;
 import org.curiouslearning.allSA_maharishi.installreferrer.InstallReferrerManager;
 import org.curiouslearning.allSA_maharishi.presentation.adapters.WebAppsAdapter;
 import org.curiouslearning.allSA_maharishi.presentation.base.BaseActivity;
@@ -310,6 +312,21 @@ public class MainActivity extends BaseActivity {
                 });
             }
         });
+
+        Button editNameButton = findViewById(R.id.edit_name);
+        if (editNameButton != null) {
+            editNameButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AnimationUtil.scaleButton(view, new Runnable() {
+                        @Override
+                        public void run() {
+                            showNameEditDialog();
+                        }
+                    });
+                }
+            });
+        }
 
         // Initialize debug trigger area
         debugTriggerArea = findViewById(R.id.debug_trigger_area);
@@ -722,6 +739,93 @@ public class MainActivity extends BaseActivity {
                 }
             });
         });
+    }
+
+    private void showNameEditDialog() {
+        Dialog nameDialog = new Dialog(this);
+        nameDialog.setContentView(R.layout.dialog_edit_name);
+        nameDialog.setCanceledOnTouchOutside(true);
+        if (nameDialog.getWindow() != null) {
+            nameDialog.getWindow().setBackgroundDrawable(null);
+        }
+
+        View dialogRoot = nameDialog.findViewById(android.R.id.content);
+        if (dialogRoot instanceof android.view.ViewGroup) {
+            android.view.ViewGroup contentGroup = (android.view.ViewGroup) dialogRoot;
+            if (contentGroup.getChildCount() > 0) {
+                View actualRoot = contentGroup.getChildAt(0);
+                AnimationUtil.animateDropdownOpen(actualRoot);
+            }
+        }
+
+        EditText nameEditText = nameDialog.findViewById(R.id.name_edit_text);
+        Button saveButton = nameDialog.findViewById(R.id.save_name_button);
+        ImageView closeButton = nameDialog.findViewById(R.id.dialog_close);
+
+        // Pre-fill existing name
+        String currentName = prefs.getString("userName", "maharishi");
+        nameEditText.setText(currentName);
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String newName = nameEditText.getText().toString().trim();
+                String pseudoId = prefs.getString("pseudoId", "");
+
+                if (!newName.isEmpty()) {
+                    // Disable button and show loading state
+                    saveButton.setEnabled(false);
+                    saveButton.setText("Checking...");
+
+                    FirestoreUtils.checkNameAvailability(newName, pseudoId, new FirestoreUtils.OnNameCheckListener() {
+                        @Override
+                        public void onResult(boolean isAvailable, boolean isOwnedByCurrentUser, String error) {
+                            if (error != null) {
+                                saveButton.setEnabled(true);
+                                saveButton.setText("Save");
+                                Toast.makeText(MainActivity.this, "Connection error: " + error, Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+
+                            if (isAvailable) {
+                                // Name is available, register it
+                                FirestoreUtils.registerName(newName, pseudoId, new FirestoreUtils.OnNameRegisteredListener() {
+                                    @Override
+                                    public void onSuccess() {
+                                        prefs.edit().putString("userName", newName).apply();
+                                        Toast.makeText(MainActivity.this, "Name saved: " + newName, Toast.LENGTH_SHORT).show();
+                                        nameDialog.dismiss();
+                                    }
+
+                                    @Override
+                                    public void onFailure(String error) {
+                                        saveButton.setEnabled(true);
+                                        saveButton.setText("Save");
+                                        Toast.makeText(MainActivity.this, "Failed to register name: " + error, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            } else {
+                                // Name already taken
+                                saveButton.setEnabled(true);
+                                saveButton.setText("Save");
+                                Toast.makeText(MainActivity.this, "Name '" + newName + "' is already taken. Please try another.", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter a name", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nameDialog.dismiss();
+            }
+        });
+
+        nameDialog.show();
     }
 
     private void showLanguagePopup() {

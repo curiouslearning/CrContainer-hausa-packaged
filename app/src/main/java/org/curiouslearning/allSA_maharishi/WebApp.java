@@ -31,7 +31,6 @@ import org.curiouslearning.allSA_maharishi.presentation.base.BaseActivity;
 import org.curiouslearning.allSA_maharishi.utilities.ConnectionUtils;
 import org.curiouslearning.allSA_maharishi.utilities.AudioPlayer;
 
-
 import org.curiouslearning.allSA_maharishi.core.subapp.payload.AppEventPayload;
 import org.curiouslearning.allSA_maharishi.core.subapp.validation.AppEventPayloadValidator;
 import org.curiouslearning.allSA_maharishi.core.subapp.validation.ValidationResult;
@@ -42,7 +41,7 @@ public class WebApp extends BaseActivity {
 
     private String title;
     private String appUrl;
-
+    private String hostName;
     private WebView webView;
     private SharedPreferences sharedPref;
     private SharedPreferences utmPrefs;
@@ -68,6 +67,7 @@ public class WebApp extends BaseActivity {
         audioPlayer = new AudioPlayer();
         setContentView(R.layout.activity_web_app);
         getIntentData();
+        setHostName();
         initViews();
         logAppLaunchEvent();
         loadWebView();
@@ -84,6 +84,10 @@ public class WebApp extends BaseActivity {
         }
     }
 
+    private void setHostName() {
+
+    }
+
     private void initViews() {
         sharedPref = getApplicationContext().getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE);
         utmPrefs = getApplicationContext().getSharedPreferences(UTM_PREFS_NAME, Context.MODE_PRIVATE);
@@ -91,7 +95,7 @@ public class WebApp extends BaseActivity {
         pseudoId = sharedPref.getString("pseudoId", "");
         source = utmPrefs.getString("source", "");
         campaignId = utmPrefs.getString("campaign_id", "");
-                goBack = findViewById(R.id.button2);
+        goBack = findViewById(R.id.button2);
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,8 +140,10 @@ public class WebApp extends BaseActivity {
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new WebAppInterface(this), "Android");
+        String userName = sharedPref.getString("userName", "maharishi");
+        String dynamicHostName = userName + "_cr-ftm-standalone.androidplatform.net";
         WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
-                .setDomain("maharishi_cr-ftm-standalone.androidplatform.net")
+                .setDomain(dynamicHostName)
                 .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
                 .build();
         webView.setWebViewClient(new WebViewClient() {
@@ -152,13 +158,14 @@ public class WebApp extends BaseActivity {
             if (source != null && !source.isEmpty()) {
                 appUrl = addSourceToUrl(appUrl);
             } else {
-//                Sentry.captureMessage("Missing source when building URL for app: " + appUrl);
+                // Sentry.captureMessage("Missing source when building URL for app: " + appUrl);
                 Log.w("WebApp", "Missing source parameter for app: " + appUrl);
             }
             if (campaignId != null && !campaignId.isEmpty()) {
                 appUrl = addCampaignIdToUrl(appUrl);
             } else {
-//                Sentry.captureMessage("Missing campaign_id when building URL for app: " + appUrl);
+                // Sentry.captureMessage("Missing campaign_id when building URL for app: " +
+                // appUrl);
                 Log.w("WebApp", "Missing campaign_id parameter for app: " + appUrl);
             }
         }
@@ -184,7 +191,7 @@ public class WebApp extends BaseActivity {
         String modifiedUrl = originalUri.toString() + separator + "cr_user_id=" +
                 pseudoId;
         if (pseudoId == null || pseudoId.isEmpty()) {
-//            Sentry.captureMessage("Missing cr_user_id for app: " + appUrl);
+            // Sentry.captureMessage("Missing cr_user_id for app: " + appUrl);
             Log.e("WebApp", "Missing cr_user_id when building URL");
         }
         return modifiedUrl;
@@ -274,7 +281,6 @@ public class WebApp extends BaseActivity {
             });
         }
 
-
         @JavascriptInterface
         public void logMessage(String payloadJson) {
 
@@ -302,6 +308,7 @@ public class WebApp extends BaseActivity {
                 Log.e("WebApp", "Unexpected error handling payload", e);
             }
         }
+
         @JavascriptInterface
         public void onMonsterEvolutionStateReceived(String jsonState) {
             Log.d("WebApp", "Monster evolution state received: " + jsonState);
@@ -354,11 +361,11 @@ public class WebApp extends BaseActivity {
          * FTM may provide either:
          * - an explicit phase (e.g. monsterPhase), or
          * - only success stars, in which case we compute phase using the existing
-         *   progression thresholds used by the container:
-         *   0: Egg
-         *   1: Hatched (≥12 stars)
-         *   2: Young (≥38 stars)
-         *   3: Adult (≥63 stars)
+         * progression thresholds used by the container:
+         * 0: Egg
+         * 1: Hatched (≥12 stars)
+         * 2: Young (≥38 stars)
+         * 3: Adult (≥63 stars)
          *
          * This logic is intentionally tolerant of different JSON key spellings
          * to avoid being stuck at phase 0 due to a missing/renamed field.
