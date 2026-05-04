@@ -110,6 +110,7 @@ public class MainActivity extends BaseActivity {
     private FrameLayout qrOverlay;
     private ImageView qrCodeImageView;
     private Button showIdButton;
+    private TextView qrIdText;
     // Observer de-duplication fields (Bug 1 & Bug 2 fix)
     private Observer<List<WebApp>> selectedLangObserver;
     private LiveData<List<WebApp>> selectedLangLiveData;
@@ -341,11 +342,16 @@ public class MainActivity extends BaseActivity {
 
         qrOverlay = findViewById(R.id.qr_overlay);
         qrCodeImageView = findViewById(R.id.qr_code_image);
+        qrIdText = findViewById(R.id.qr_id_text);
         showIdButton = findViewById(R.id.show_id_button);
 
         String pseudoId = prefs.getString("pseudoId", "");
         if (qrCodeImageView != null) {
             generateQRCode(pseudoId, qrCodeImageView);
+        }
+
+        if (qrIdText != null) {
+            qrIdText.setText("ID: " + pseudoId);
         }
 
         if (showIdButton != null) {
@@ -376,10 +382,16 @@ public class MainActivity extends BaseActivity {
             qrCodeImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                    ClipData clip = ClipData.newPlainText("Unique ID", pseudoId);
-                    clipboard.setPrimaryClip(clip);
-                    Toast.makeText(MainActivity.this, "Unique ID copied to clipboard", Toast.LENGTH_SHORT).show();
+                    copyToClipboard(pseudoId);
+                }
+            });
+        }
+
+        if (qrIdText != null) {
+            qrIdText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    copyToClipboard(pseudoId);
                 }
             });
         }
@@ -592,6 +604,13 @@ public class MainActivity extends BaseActivity {
             e.printStackTrace();
         }
     }
+    private void copyToClipboard(String text) {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("Unique ID", text);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(MainActivity.this, "Unique ID copied to clipboard", Toast.LENGTH_SHORT).show();
+    }
+
     protected void initRecyclerView() {
         recyclerView = findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(
