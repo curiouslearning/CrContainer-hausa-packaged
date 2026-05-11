@@ -361,6 +361,9 @@ public class MainActivity extends BaseActivity {
                     if (qrOverlay != null) {
                         qrOverlay.setVisibility(View.VISIBLE);
                         showIdButton.setVisibility(View.GONE);
+                        if (settingsButton != null) {
+                            settingsButton.setEnabled(false);
+                        }
                     }
                 }
             });
@@ -373,6 +376,9 @@ public class MainActivity extends BaseActivity {
                     qrOverlay.setVisibility(View.GONE);
                     if (showIdButton != null) {
                         showIdButton.setVisibility(View.VISIBLE);
+                    }
+                    if (settingsButton != null) {
+                        settingsButton.setEnabled(true);
                     }
                 }
             });
