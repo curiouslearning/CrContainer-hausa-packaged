@@ -2,4 +2,4 @@
 .idea
 .gradle
 .circleci
-app/google-services.json
+/google-services.json
