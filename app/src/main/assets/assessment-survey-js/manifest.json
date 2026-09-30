@@ -3,7 +3,7 @@
   "short_name": "Assessment/Survey app",
   "icons": [
     {
-      "src": "dist/images/red_bird_256.webp",
+      "src": "assets/img/red_bird_256.webp",
       "sizes": "256x256",
       "purpose": "any",
       "type": "image/png"
@@ -13,6 +13,6 @@
   "display": "standalone",
   "orientation": "landscape",
   "incognito": "split",
-  "background_color": "#fff",
-  "theme_color": ""
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
 }

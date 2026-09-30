@@ -16,6 +16,14 @@
       "appUrl": "https://hausa_assessments_facilitators.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-sightwords",
       "language": "Hausa",
       "languageInEnglishName": "Hausa"
+    },
+    {
+      "appId": 2,
+      "appIconUrl": "assessment-icon_spelling_assessment.png",
+      "title": "Assessment Spelling Hausa",
+      "appUrl": "https://hausa_assessments_facilitators.androidplatform.net/assets/assessment-survey-js/index.html?data=hausa-spellings",
+      "language": "Hausa",
+      "languageInEnglishName": "Hausa"
     }
   ]
 }
